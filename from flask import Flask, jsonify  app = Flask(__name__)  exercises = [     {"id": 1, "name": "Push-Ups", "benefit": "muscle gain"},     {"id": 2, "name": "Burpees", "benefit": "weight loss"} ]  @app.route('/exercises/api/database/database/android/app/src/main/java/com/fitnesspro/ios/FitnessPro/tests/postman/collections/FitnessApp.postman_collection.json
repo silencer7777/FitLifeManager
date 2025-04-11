@@ -1,0 +1,15 @@
+{
+  "info": {
+    "name": "Fitness App API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Exercises",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/exercises/muscle%20gain"
+      }
+    }
+  ]
+}
