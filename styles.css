@@ -17,8 +17,8 @@ body {
   box-shadow: 0 8px 32px rgba(44,62,80,0.15);
   max-width: 900px;
   width: 100%;
-  margin: 40px 0;
-  padding: 2.5rem 2rem 2rem 2rem;
+  margin: 20px 10px;
+  padding: 2rem 1.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -26,12 +26,17 @@ body {
 /* App Title */
 h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #fc575e;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin-bottom: 1.5rem;
-  font-weight: 900;
-  text-shadow: 0 2px 8px #f7b42c33;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(247, 180, 44, 0.2);
+}
+
+h1 i {
+  margin-right: 10px;
+  color: #f7b42c;
 }
 
 /* Section Headings */
@@ -46,28 +51,40 @@ h2 {
   gap: 0.5em;
 }
 
+h2 i {
+  color: #fc575e;
+}
+
 h3 {
   color: #fc575e;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+h3 i {
+  color: #f7b42c;
 }
 
 /* Card Style */
 .checklist-item {
   background: linear-gradient(120deg, #fffbe6 0%, #ffe0e9 100%);
   border-radius: 1.2rem;
-  box-shadow: 0 2px 12px #fc575e22;
+  box-shadow: 0 2px 12px rgba(252, 87, 94, 0.13);
   margin: 1.5rem 0;
   padding: 1.5rem 1.2rem;
   position: relative;
   overflow: hidden;
   transition: transform 0.2s;
 }
+
 .checklist-item:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 6px 24px #fc575e33;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(252, 87, 94, 0.2);
 }
 
 /* Fun Shapes */
@@ -76,16 +93,17 @@ h3 {
   position: absolute;
   top: -60px; left: -60px;
   width: 180px; height: 180px;
-  background: radial-gradient(circle, #fc575e55 60%, transparent 100%);
+  background: radial-gradient(circle, rgba(252, 87, 94, 0.33) 60%, transparent 100%);
   border-radius: 50%;
   z-index: 0;
 }
+
 .app-container::after {
   content: '';
   position: absolute;
   bottom: -80px; right: -80px;
   width: 200px; height: 200px;
-  background: radial-gradient(circle, #f7b42c55 60%, transparent 100%);
+  background: radial-gradient(circle, rgba(247, 180, 44, 0.33) 60%, transparent 100%);
   border-radius: 50%;
   z-index: 0;
 }
@@ -101,19 +119,24 @@ button {
   font-weight: 600;
   margin: 0.3em 0.5em 0.3em 0;
   cursor: pointer;
-  box-shadow: 0 2px 8px #fc575e22;
-  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(252, 87, 94, 0.13);
+  transition: all 0.2s ease;
 }
+
 button:hover {
   background: linear-gradient(90deg, #f7b42c 0%, #fc575e 100%);
   transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 /* Water Tracker */
 .water-tracker {
   background: #fff;
   border-radius: 1em;
-  box-shadow: 0 1px 4px #f7b42c22;
+  box-shadow: 0 1px 4px rgba(247, 180, 44, 0.13);
   margin: 0.5em 0 1em 0;
   padding: 0.5em 1em;
   position: relative;
@@ -122,6 +145,7 @@ button:hover {
   display: flex;
   align-items: center;
 }
+
 .water-progress {
   position: absolute;
   left: 0; top: 0; bottom: 0;
@@ -131,6 +155,7 @@ button:hover {
   transition: width 0.4s cubic-bezier(.4,2,.6,1);
   height: 100%;
 }
+
 .water-tracker span {
   position: relative;
   z-index: 1;
@@ -142,14 +167,15 @@ button:hover {
 /* Workout Day */
 .workout-day {
   margin-bottom: 1.2em;
-  background: #fffbe6cc;
+  background: rgba(255, 251, 230, 0.8);
   border-radius: 0.8em;
   padding: 0.7em 1em;
-  box-shadow: 0 1px 4px #f7b42c22;
+  box-shadow: 0 1px 4px rgba(247, 180, 44, 0.13);
   position: relative;
   display: flex;
   flex-direction: column;
 }
+
 .workout-day label {
   font-size: 1.1em;
   font-weight: 600;
@@ -158,17 +184,20 @@ button:hover {
   align-items: center;
   gap: 0.5em;
 }
+
 .workout-day input[type="checkbox"] {
   accent-color: #fc575e;
   width: 1.2em;
   height: 1.2em;
   margin-right: 0.5em;
 }
+
 .workout-day ul {
   margin: 0.5em 0 0 1.5em;
   padding: 0;
   list-style: none;
 }
+
 .workout-day ul li {
   margin-bottom: 0.2em;
   font-size: 1em;
@@ -176,6 +205,7 @@ button:hover {
   position: relative;
   padding-left: 1.5em;
 }
+
 .workout-day ul li::before {
   content: '\f44b';
   font-family: "Font Awesome 6 Free";
@@ -190,10 +220,12 @@ button:hover {
 /* Meal Generator */
 .meal-generator .meal-controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1em;
   margin-bottom: 1em;
 }
+
 .meal-generator select {
   border-radius: 1.2em;
   border: 1px solid #fc575e;
@@ -204,61 +236,76 @@ button:hover {
   font-weight: 600;
   outline: none;
   transition: border 0.2s;
+  flex-grow: 1;
+  min-width: 150px;
 }
+
 .meal-generator select:focus {
   border: 2px solid #f7b42c;
 }
-.meal-generator ul {
-  margin: 0.5em 0 0 1.5em;
-  padding: 0;
-  list-style: none;
-}
-.meal-generator ul li {
-  margin-bottom: 0.2em;
-  font-size: 1em;
-  color: #333;
-  position: relative;
-  padding-left: 1.5em;
-}
-.meal-generator ul li::before {
-  content: '\f5d1';
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  color: #fc575e;
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1em;
-}
 
-/* Animated SVG Characters */
-.animated-character {
-  width: 80px;
-  height: 80px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 1em;
-  animation: bounce 2s infinite cubic-bezier(.4,2,.6,1);
-}
-@keyframes bounce {
-  0%, 100% { transform: translateY(0);}
-  50% { transform: translateY(-12px);}
+.meal-generator p {
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 500;
 }
 
 /* Responsive */
 @media (max-width: 700px) {
   .app-container {
-    padding: 1rem 0.5rem;
-    border-radius: 1rem;
+    margin: 10px;
+    padding: 1.2rem 0.8rem;
+    border-radius: 1.5rem;
   }
+  
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
+  
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
-  .animated-character {
-    width: 60px;
-    height: 60px;
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  .water-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 0.9rem;
+  }
+  
+  .meal-generator .meal-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .meal-generator select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .app-container {
+    margin: 5px;
+    padding: 1rem 0.6rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .checklist-item {
+    padding: 1rem 0.8rem;
+  }
+  
+  .workout-day {
+    padding: 0.5em 0.7em;
   }
 }
