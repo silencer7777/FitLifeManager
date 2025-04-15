@@ -1,7 +1,3 @@
-// Add these CDNs in CodePen settings:
-// https://unpkg.com/react@18/umd/react.development.js
-// https://unpkg.com/react-dom@18/umd/react-dom.development.js
-
 class ProgressTracker extends React.Component {
   render() {
     return (
@@ -59,3 +55,4 @@ function App() {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
