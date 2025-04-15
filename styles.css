@@ -42,3 +42,16 @@ button:hover {
   background: #2980b9;
 }
 
+/* Additional Component Styles */
+.progress-tracker,
+.meal-generator {
+  margin: 30px 0;
+}
+
+h2 {
+  color: #34495e;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
