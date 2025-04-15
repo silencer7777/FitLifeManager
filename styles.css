@@ -1,35 +1,264 @@
+/* App Background */
 body {
-  background: #f5f5f5;
-  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f7b42c 0%, #fc575e 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.checklist-item {
-  margin: 15px 0;
-  padding: 20px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
+/* App Container */
 .app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.95);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.15);
+  max-width: 900px;
+  width: 100%;
+  margin: 40px 0;
+  padding: 2.5rem 2rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
+/* App Title */
 h1 {
-  color: #2c3e50;
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  color: #fc575e;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+  text-shadow: 0 2px 8px #f7b42c33;
 }
 
-button {
-  padding: 10px 20px;
+/* Section Headings */
+h2 {
+  color: #f7b42c;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
 
+h3 {
+  color: #fc575e;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Card Style */
+.checklist-item {
+  background: linear-gradient(120deg, #fffbe6 0%, #ffe0e9 100%);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px #fc575e22;
+  margin: 1.5rem 0;
+  padding: 1.5rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.checklist-item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 6px 24px #fc575e33;
+}
+
+/* Fun Shapes */
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, #fc575e55 60%, transparent 100%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.app-container::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, #f7b42c55 60%, transparent 100%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(90deg, #fc575e 0%, #f7b42c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7em 1.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.3em 0.5em 0.3em 0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #fc575e22;
+  transition: background 0.2s, transform 0.2s;
+}
+button:hover {
+  background: linear-gradient(90deg, #f7b42c 0%, #fc575e 100%);
+  transform: scale(1.05);
+}
+
+/* Water Tracker */
+.water-tracker {
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 1px 4px #f7b42c22;
+  margin: 0.5em 0 1em 0;
+  padding: 0.5em 1em;
+  position: relative;
+  overflow: hidden;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+}
+.water-progress {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: linear-gradient(90deg, #fc575e 0%, #f7b42c 100%);
+  border-radius: 1em;
+  z-index: 0;
+  transition: width 0.4s cubic-bezier(.4,2,.6,1);
+  height: 100%;
+}
+.water-tracker span {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  color: #fc575e;
+  margin-left: 0.5em;
+}
+
+/* Workout Day */
+.workout-day {
+  margin-bottom: 1.2em;
+  background: #fffbe6cc;
+  border-radius: 0.8em;
+  padding: 0.7em 1em;
+  box-shadow: 0 1px 4px #f7b42c22;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.workout-day label {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #fc575e;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.workout-day input[type="checkbox"] {
+  accent-color: #fc575e;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+}
+.workout-day ul {
+  margin: 0.5em 0 0 1.5em;
+  padding: 0;
+  list-style: none;
+}
+.workout-day ul li {
+  margin-bottom: 0.2em;
+  font-size: 1em;
+  color: #333;
+  position: relative;
+  padding-left: 1.5em;
+}
+.workout-day ul li::before {
+  content: '\f44b';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #f7b42c;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1em;
+}
+
+/* Meal Generator */
+.meal-generator .meal-controls {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+.meal-generator select {
+  border-radius: 1.2em;
+  border: 1px solid #fc575e;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background: #fffbe6;
+  color: #fc575e;
+  font-weight: 600;
+  outline: none;
+  transition: border 0.2s;
+}
+.meal-generator select:focus {
+  border: 2px solid #f7b42c;
+}
+.meal-generator ul {
+  margin: 0.5em 0 0 1.5em;
+  padding: 0;
+  list-style: none;
+}
+.meal-generator ul li {
+  margin-bottom: 0.2em;
+  font-size: 1em;
+  color: #333;
+  position: relative;
+  padding-left: 1.5em;
+}
+.meal-generator ul li::before {
+  content: '\f5d1';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #fc575e;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1em;
+}
+
+/* Animated SVG Characters */
+.animated-character {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1em;
+  animation: bounce 2s infinite cubic-bezier(.4,2,.6,1);
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-12px);}
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .app-container {
+    padding: 1rem 0.5rem;
+    border-radius: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .animated-character {
+    width: 60px;
+    height: 60px;
+  }
+}
