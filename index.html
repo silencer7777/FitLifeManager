@@ -1,217 +1,254 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Global Fitness Pro App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Fitness Pro App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div id="root"></div>
+    <div id="root"></div>
 
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  
-  <script type="text/babel">
-    // Meal data (shortened for brevity)
-    const mealCategories = {
-      vegan: ["Lentil Curry", "Chickpea Bowl"],
-      highProtein: ["Salmon Teriyaki", "Turkey Quinoa"],
-      lowCalorie: ["Zucchini Noodles", "Shrimp Ceviche"],
-      cultural: ["Okonomiyaki", "Thieboudienne"],
-      balanced: ["Grain Bowl", "Nasi Campur"]
-    };
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-    // Workout data
-    const workoutPools = {
-      strength: ["Push-ups", "Squats"],
-      hiit: ["Burpees", "Mountain Climbers"],
-      cardio: ["Running", "Cycling"],
-      recovery: ["Yoga", "Stretching"]
-    };
+    <script type="text/babel">
+        const mealCategories = {
+            vegan: [
+                "Lentil & Sweet Potato Curry", "Chickpea Buddha Bowl", "Tofu Banh Mi",
+                "Jackfruit Tacos", "Mushroom Walnut Bolognese", "Ethiopian Misir Wot",
+                "Korean Bibimbap (Vegan)", "Jamaican Callaloo", "Indian Chana Masala",
+                "Lebanese Mujadara", "Thai Green Papaya Salad", "Nigerian Bean Porridge"
+            ],
+            highProtein: [
+                "Grilled Salmon Teriyaki", "Turkey & Quinoa Stuffed Peppers",
+                "Beef Bulgogi Bowl", "Greek Chicken Souvlaki", "Tuna Poke Bowl",
+                "Peruvian Lomo Saltado", "Moroccan Lamb Tagine", "Vietnamese Pho Bo",
+                "Brazilian Feijoada", "Filipino Adobo Chicken", "South African Bobotie",
+                "Argentinian Asado"
+            ],
+            lowCalorie: [
+                "Zucchini Noodles Primavera", "Shrimp Ceviche", "Cauliflower Fried Rice",
+                "Turkish Shepherd's Salad", "Vietnamese Goi Cuon", "Japanese Hiyayakko",
+                "Spanish Gazpacho", "Lebanese Fattoush", "Mexican Ceviche de Camaron",
+                "Greek Spanakorizo", "Thai Larb Gai", "Italian Caprese Stuffed Avocados"
+            ],
+            cultural: [
+                "Japanese Okonomiyaki", "Senegalese Thieboudienne", "Polish Pierogi",
+                "Malaysian Laksa", "Omani Shuwa", "Guatemalan Pepian",
+                "Armenian Dolma", "Finnish Lohikeitto", "Portuguese Bacalhau",
+                "Cuban Ropa Vieja", "Iraqi Masgouf", "Australian Wattleseed Crusted Barramundi"
+            ],
+            balanced: [
+                "Mediterranean Grain Bowl", "Balinese Nasi Campur", "Turkish Menemen",
+                "Korean Bibimbap", "Egyptian Koshari", "Filipino Sinigang",
+                "Hungarian Goulash", "Persian Fesenjan", "Ukrainian Borscht",
+                "Colombian Sancocho", "Nepalese Dal Bhat", "Tibetan Thukpa"
+            ]
+        };
 
-    const fullWorkoutPlan = [
-      { day: "Monday", focus: "Full Body", exercises: ["Squats", "Deadlifts"] },
-      { day: "Tuesday", focus: "HIIT", exercises: ["Burpees", "Jump Squats"] }
-    ];
+        const workoutPlans = {
+            strength: [
+                "Push-ups: 3x12", "Pull-ups: 3x8", "Squats: 4x15",
+                "Deadlifts: 3x10", "Bench Press: 4x8", "Russian Twists: 3x20"
+            ],
+            hiit: [
+                "Burpees: 1min", "Mountain Climbers: 1min", "Jump Squats: 1min",
+                "Plank Jacks: 1min", "Skater Jumps: 1min", "Rest: 30sec"
+            ],
+            cardio: [
+                "Running: 30min", "Cycling: 45min", "Rowing: 20min",
+                "Jump Rope: 15min", "Stair Climbing: 20min", "Swimming: 30min"
+            ],
+            recovery: [
+                "Yoga Flow: 30min", "Foam Rolling: 15min", "Dynamic Stretching: 20min",
+                "Tai Chi: 25min", "Pilates: 30min", "Breathing Exercises: 10min"
+            ]
+        };
 
-    class ProgressTracker extends React.Component {
-      state = {
-        waterIntake: 0,
-        dailyGoal: 3000,
-        workoutProgress: Array(2).fill(false),  // Shortened for brevity
-        generatedWorkout: []
-      };
+        const fullWorkoutPlan = [
+            {
+                day: "Monday",
+                focus: "Full Body Strength",
+                exercises: [
+                    "Barbell Squats 4x8", "Deadlifts 3x6", "Bench Press 4x8",
+                    "Pull-ups 3x8", "Plank 3x1min"
+                ]
+            },
+            {
+                day: "Tuesday",
+                focus: "HIIT Cardio",
+                exercises: [
+                    "Burpees 30sec", "Mountain Climbers 30sec", "Jump Squats 30sec",
+                    "Rest 15sec (Repeat 5 rounds)"
+                ]
+            },
+            {
+                day: "Wednesday",
+                focus: "Upper Body & Core",
+                exercises: [
+                    "Push-ups 4x12", "Dumbbell Rows 3x10", "Shoulder Press 3x10",
+                    "Russian Twists 3x20", "Bicycle Crunches 3x15"
+                ]
+            },
+            {
+                day: "Thursday",
+                focus: "Lower Body Strength",
+                exercises: [
+                    "Lunges 3x12", "Leg Press 4x10", "Romanian Deadlifts 3x8",
+                    "Calf Raises 3x15", "Glute Bridges 3x12"
+                ]
+            },
+            {
+                day: "Friday",
+                focus: "Active Recovery",
+                exercises: [
+                    "Yoga Flow 30min", "Foam Rolling 15min",
+                    "Dynamic Stretching 20min"
+                ]
+            },
+            {
+                day: "Saturday",
+                focus: "Functional Training",
+                exercises: [
+                    "Kettlebell Swings 3x15", "Battle Ropes 3x1min",
+                    "Box Jumps 3x10", "Medicine Ball Slams 3x12"
+                ]
+            },
+            {
+                day: "Sunday",
+                focus: "Rest & Mobility",
+                exercises: [
+                    "Yin Yoga 45min", "Mobility Drills 20min",
+                    "Breathing Exercises 10min"
+                ]
+            }
+        ];
 
-      handleWaterChange = (amount) => {
-        this.setState(prev => ({
-          waterIntake: Math.max(0, Math.min(prev.dailyGoal, prev.waterIntake + amount))
-        }));
-      };
+        class ProgressTracker extends React.Component {
+            state = {
+                waterIntake: 0,
+                dailyGoal: 3000, // ml
+                workoutProgress: Array(7).fill(false)
+            };
 
-      toggleWorkoutDay = (index) => {
-        this.setState(prev => ({
-          workoutProgress: prev.workoutProgress.map((val, i) => i === index ? !val : val)
-        }));
-      };
+            handleWaterChange = (amount) => {
+                this.setState(prev => ({
+                    waterIntake: Math.max(0, prev.waterIntake + amount)
+                }));
+            };
 
-      generateCustomWorkout = () => {
-        const types = Object.keys(workoutPools);
-        const routine = types.map(type => {
-          const exercises = workoutPools[type];
-          return exercises[Math.floor(Math.random() * exercises.length)];
-        });
-        this.setState({ generatedWorkout: routine });
-      };
+            toggleWorkoutDay = (index) => {
+                this.setState(prev => ({
+                    workoutProgress: prev.workoutProgress.map((val, i) =>
+                        i === index ? !val : val
+                    )
+                }));
+            };
 
-      render() {
-        const { waterIntake, dailyGoal, workoutProgress, generatedWorkout } = this.state;
-        const progress = (waterIntake / dailyGoal) * 100;
+            render() {
+                const { waterIntake, dailyGoal, workoutProgress } = this.state;
+                const progress = (waterIntake / dailyGoal) * 100;
 
-        return (
-          <div className="progress-tracker">
-            <h2>
-              <span className="animated-character">
-                <svg viewBox="0 0 80 80" fill="none">
-                  <ellipse cx="40" cy="70" rx="25" ry="8" fill="#f7b42c" opacity="0.3"/>
-                  <circle cx="40" cy="32" r="18" fill="#fc575e"/>
-                  <rect x="32" y="50" width="16" height="18" rx="8" fill="#f7b42c"/>
-                  <rect x="18" y="60" width="12" height="8" rx="4" fill="#fc575e"/>
-                  <rect x="50" y="60" width="12" height="8" rx="4" fill="#fc575e"/>
-                  <rect x="10" y="58" width="8" height="8" rx="4" fill="#333"/>
-                  <rect x="62" y="58" width="8" height="8" rx="4" fill="#333"/>
-                </svg>
-              </span>
-              Daily Progress
-            </h2>
-            
-            <div className="checklist-item">
-              <h3>
-                <i className="fas fa-tint"></i> Water Intake
-              </h3>
-              <div className="water-tracker">
-                <div className="water-progress" style={{ width: `${progress}%` }}></div>
-                <span>{waterIntake}ml / {dailyGoal}ml</span>
-              </div>
-              <div className="water-controls">
-                <button onClick={() => this.handleWaterChange(250)}>+250ml</button>
-                <button onClick={() => this.handleWaterChange(500)}>+500ml</button>
-                <button onClick={() => this.handleWaterChange(-250)}>-250ml</button>
-              </div>
-            </div>
+                return (
+                    <div className="progress-tracker">
+                        <h2>Daily Progress</h2>
 
-            <div className="checklist-item">
-              <h3>
-                <span className="animated-character">
-                  <svg viewBox="0 0 80 80" fill="none">
-                    <ellipse cx="40" cy="70" rx="25" ry="8" fill="#fc575e" opacity="0.3"/>
-                    <circle cx="40" cy="32" r="16" fill="#f7b42c"/>
-                    <rect x="34" y="48" width="12" height="20" rx="6" fill="#fc575e"/>
-                    <rect x="20" y="62" width="10" height="8" rx="4" fill="#f7b42c"/>
-                    <rect x="50" y="62" width="10" height="8" rx="4" fill="#f7b42c"/>
-                    <rect x="12" y="60" width="8" height="8" rx="4" fill="#333"/>
-                    <rect x="60" y="60" width="8" height="8" rx="4" fill="#333"/>
-                  </svg>
-                </span>
-                7-Day Workout Plan
-              </h3>
-              {fullWorkoutPlan.map((day, index) => (
-                <div key={day.day} className="workout-day">
-                  <label>
-                    <input
-                      type="checkbox"
-                      checked={workoutProgress[index]}
-                      onChange={() => this.toggleWorkoutDay(index)}
-                    />
-                    <strong>{day.day}</strong>: {day.focus}
-                  </label>
-                  <ul>
-                    {day.exercises.map(ex => <li key={ex}><i className="fas fa-dumbbell"></i> {ex}</li>)}
-                  </ul>
-                </div>
-              ))}
-            </div>
+                        <div className="checklist-item">
+                            <h3>Water Intake</h3>
+                            <div className="water-tracker">
+                                <div className="water-progress" style={{ width: `${progress}%` }}></div>
+                                <span>{waterIntake}ml / {dailyGoal}ml</span>
+                            </div>
+                            <div className="water-controls">
+                                <button onClick={() => this.handleWaterChange(250)}>+250ml</button>
+                                <button onClick={() => this.handleWaterChange(500)}>+500ml</button>
+                                <button onClick={() => this.handleWaterChange(-250)}>-250ml</button>
+                            </div>
+                        </div>
 
-            <div className="checklist-item">
-              <h3>
-                <i className="fas fa-fire"></i> Custom Workout Generator
-              </h3>
-              <button onClick={this.generateCustomWorkout}>Generate New Workout</button>
-              {generatedWorkout.length > 0 && (
-                <ul>
-                  {generatedWorkout.map((ex, i) => (
-                    <li key={i}><i className="fas fa-bolt"></i> {ex}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </div>
-        );
-      }
-    }
+                        <div className="checklist-item">
+                            <h3>7-Day Workout Plan</h3>
+                            {fullWorkoutPlan.map((day, index) => (
+                                <div key={day.day} className="workout-day">
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            checked={workoutProgress[index]}
+                                            onChange={() => this.toggleWorkoutDay(index)}
+                                        />
+                                        <strong>{day.day}</strong>: {day.focus}
+                                    </label>
+                                    <ul>
+                                        {day.exercises.map(ex => <li key={ex}>{ex}</li>)}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                );
+            }
+        }
 
-    class MealGenerator extends React.Component {
-      state = {
-        meal: "Click to generate",
-        selectedCategory: 'balanced'
-      };
+        class MealGenerator extends React.Component {
+            state = {
+                meal: "Click to generate",
+                selectedCategory: 'balanced'
+            };
 
-      generateMeal = () => {
-        const { selectedCategory } = this.state;
-        const meals = mealCategories[selectedCategory];
-        const randomMeal = meals[Math.floor(Math.random() * meals.length)];
-        this.setState({ meal: randomMeal });
-      };
+            generateMeal = () => {
+                const { selectedCategory } = this.state;
+                const meals = mealCategories[selectedCategory];
+                const randomMeal = meals[Math.floor(Math.random() * meals.length)];
+                this.setState({ meal: randomMeal });
+            };
 
-      handleCategoryChange = (e) => {
-        this.setState({ selectedCategory: e.target.value });
-      };
+            handleCategoryChange = (e) => {
+                this.setState({ selectedCategory: e.target.value });
+            };
 
-      render() {
-        return (
-          <div className="meal-generator">
-            <h2>
-              <i className="fas fa-utensils"></i> Multi-Cultural Meal Generator
-            </h2>
-            
-            <div className="meal-controls">
-              <select 
-                value={this.state.selectedCategory} 
-                onChange={this.handleCategoryChange}
-              >
-                <option value="vegan">Vegan</option>
-                <option value="highProtein">High Protein</option>
-                <option value="lowCalorie">Low Calorie</option>
-                <option value="cultural">Cultural Specials</option>
-                <option value="balanced">Balanced Meals</option>
-              </select>
-              
-              <button onClick={this.generateMeal}>Generate Meal</button>
-            </div>
+            render() {
+                return (
+                    
+                                
+                                    
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    
+                                    
+                                        Generate Meal
+                                    
+                                
+                                
+                                    {this.state.meal}
+                                
+                            
+                        
+                    
+                );
+            }
+        }
 
-            <div className="checklist-item">
-              <p>{this.state.meal}</p>
-            </div>
-          </div>
-        );
-      }
-    }
+        function App() {
+            return (
+                
+                    
+                        Global Fitness Pro App
+                    
+                    
+                    
+                
+            );
+        }
 
-    function App() {
-      return (
-        <div className="app-container">
-          <h1>
-            <i className="fas fa-globe"></i> Global Fitness Pro App
-          </h1>
-          <ProgressTracker />
-          <MealGenerator />
-        </div>
-      );
-    }
-
-    ReactDOM.render(<App />, document.getElementById('root'));
-  </script>
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
 </body>
 </html>
+
 
