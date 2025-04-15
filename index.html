@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fitness Pro App</title>
+  <title>Global Fitness Pro App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div id="root"></div>
@@ -152,10 +153,25 @@
 
         return (
           <div className="progress-tracker">
-            <h2>Daily Progress</h2>
+            <h2>
+              <span class="animated-character">
+                <svg viewBox="0 0 80 80" fill="none">
+                  <ellipse cx="40" cy="70" rx="25" ry="8" fill="#f7b42c" opacity="0.3"/>
+                  <circle cx="40" cy="32" r="18" fill="#fc575e"/>
+                  <rect x="32" y="50" width="16" height="18" rx="8" fill="#f7b42c"/>
+                  <rect x="18" y="60" width="12" height="8" rx="4" fill="#fc575e"/>
+                  <rect x="50" y="60" width="12" height="8" rx="4" fill="#fc575e"/>
+                  <rect x="10" y="58" width="8" height="8" rx="4" fill="#333"/>
+                  <rect x="62" y="58" width="8" height="8" rx="4" fill="#333"/>
+                </svg>
+              </span>
+              Daily Progress
+            </h2>
             
             <div className="checklist-item">
-              <h3>Water Intake</h3>
+              <h3>
+                <i class="fas fa-tint"></i> Water Intake
+              </h3>
               <div className="water-tracker">
                 <div className="water-progress" style={{ width: `${progress}%` }}></div>
                 <span>{waterIntake}ml / {dailyGoal}ml</span>
@@ -168,7 +184,20 @@
             </div>
 
             <div className="checklist-item">
-              <h3>7-Day Workout Plan</h3>
+              <h3>
+                <span class="animated-character">
+                  <svg viewBox="0 0 80 80" fill="none">
+                    <ellipse cx="40" cy="70" rx="25" ry="8" fill="#fc575e" opacity="0.3"/>
+                    <circle cx="40" cy="32" r="16" fill="#f7b42c"/>
+                    <rect x="34" y="48" width="12" height="20" rx="6" fill="#fc575e"/>
+                    <rect x="20" y="62" width="10" height="8" rx="4" fill="#f7b42c"/>
+                    <rect x="50" y="62" width="10" height="8" rx="4" fill="#f7b42c"/>
+                    <rect x="12" y="60" width="8" height="8" rx="4" fill="#333"/>
+                    <rect x="60" y="60" width="8" height="8" rx="4" fill="#333"/>
+                  </svg>
+                </span>
+                7-Day Workout Plan
+              </h3>
               {fullWorkoutPlan.map((day, index) => (
                 <div key={day.day} className="workout-day">
                   <label>
@@ -180,7 +209,7 @@
                     <strong>{day.day}</strong>: {day.focus}
                   </label>
                   <ul>
-                    {day.exercises.map(ex => <li key={ex}>{ex}</li>)}
+                    {day.exercises.map(ex => <li key={ex}><i class="fas fa-dumbbell"></i> {ex}</li>)}
                   </ul>
                 </div>
               ))}
@@ -210,7 +239,9 @@
       render() {
         return (
           <div className="meal-generator">
-            <h2>Multi-Cultural Meal Generator</h2>
+            <h2>
+              <i class="fas fa-utensils"></i> Multi-Cultural Meal Generator
+            </h2>
             
             <div className="meal-controls">
               <select 
@@ -238,7 +269,9 @@
     function App() {
       return (
         <div className="app-container">
-          <h1>Global Fitness Pro App</h1>
+          <h1>
+            <i class="fas fa-globe"></i> Global Fitness Pro App
+          </h1>
           <ProgressTracker />
           <MealGenerator />
         </div>
