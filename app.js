@@ -1,3 +1,37 @@
+const workoutImages = [
+  "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/2780768/pexels-photo-2780768.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&w=600&h=400&fit=crop",
+];
+
+const mealImages = [
+  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=compress&w=600&h=400&fit=crop",
+  "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=compress&w=600&h=400&fit=crop",
+  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=compress&w=600&h=400&fit=crop"
+];
+
+const leftSymbols = [
+  "fa-dumbbell",
+  "fa-running",
+  "fa-heartbeat",
+  "fa-bolt",
+  "fa-bicycle",
+  "fa-person-walking",
+];
+
+const rightSymbols = [
+  "fa-utensils",
+  "fa-apple-alt",
+  "fa-seedling",
+  "fa-carrot",
+  "fa-lemon",
+  "fa-pepper-hot",
+];
+
 const mealCategories = {
   vegan: [
     "Lentil & Sweet Potato Curry", "Chickpea Buddha Bowl", "Tofu Banh Mi", 
@@ -31,14 +65,6 @@ const mealCategories = {
     "Colombian Sancocho", "Nepalese Dal Bhat", "Tibetan Thukpa"
   ]
 };
-
-const mealImages = [
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&w=600&h=400&fit=crop",
-  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=compress&w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=compress&w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=compress&w=600&h=400&fit=crop"
-];
 
 const fullWorkoutPlan = [
   {
@@ -99,6 +125,23 @@ const fullWorkoutPlan = [
   }
 ];
 
+function SideColumn({ symbols, images, altPrefix }) {
+  return (
+    <div className="side-column">
+      <div className="side-symbols">
+        {symbols.map((icon, i) => (
+          <i key={icon} className={`fas ${icon}`}></i>
+        ))}
+      </div>
+      <div className="side-images-list">
+        {images.map((img, i) => (
+          <img key={img} src={img} alt={`${altPrefix} ${i+1}`} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 class ProgressTracker extends React.Component {
   state = {
     waterIntake: 0,
@@ -152,6 +195,62 @@ class ProgressTracker extends React.Component {
                 <strong>{day.day}</strong>: {day.focus}
               </label>
               <ul>
+                {day.exercises.map(ex => <li key={ex}>{ex}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
+
+class MealGenerator extends React.Component {
+  state = {
+    meal: "Click to generate",
+    selectedCategory: 'balanced',
+    mealPhoto: mealImages[0]
+  };
+
+  generateMeal = () => {
+    const { selectedCategory } = this.state;
+    const meals = mealCategories[selectedCategory];
+    const randomMeal = meals[Math.floor(Math.random() * meals.length)];
+    const mealPhoto = mealImages[Math.floor(Math.random() * mealImages.length)];
+    this.setState({ meal: randomMeal, mealPhoto });
+  };
+
+  handleCategoryChange = (e) => {
+    this.setState({ selectedCategory: e.target.value });
+  };
+
+  render() {
+    return (
+      <div className="meal-generator">
+        <h2><i className="fas fa-utensils"></i> Multi-Cultural Meal Generator</h2>
+        <div className="meal-controls">
+          <select 
+            value={this.state.selectedCategory} 
+            onChange={this.handleCategoryChange}
+          >
+            <option value="vegan">Vegan</option>
+            <option value="highProtein">High Protein</option>
+            <option value="lowCalorie">Low Calorie</option>
+            <option value="cultural">Cultural Specials</option>
+            <option value="balanced">Balanced Meals</option>
+          </select>
+          <button onClick={this.generateMeal}>Generate Meal</button>
+        </div>
+        <div className="checklist-item">
+          <p>{this.state.meal}</p>
+          <img className="meal-photo" src={this.state.mealPhoto} alt="Meal" />
+        </div>
+      </div>
+    );
+  }
+}
+
+function App
 
 
 
