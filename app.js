@@ -25,7 +25,133 @@ const mealCategories = {
     "Cuban Ropa Vieja", "Iraqi Masgouf", "Australian Wattleseed Crusted Barramundi"
   ],
   balanced: [
-    "Mediterranean Grain Bowl",
+    "Mediterranean Grain Bowl", "Balinese Nasi Campur", "Turkish Menemen",
+    "Korean Bibimbap", "Egyptian Koshari", "Filipino Sinigang",
+    "Hungarian Goulash", "Persian Fesenjan", "Ukrainian Borscht",
+    "Colombian Sancocho", "Nepalese Dal Bhat", "Tibetan Thukpa"
+  ]
+};
+
+const mealImages = [
+  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=compress&w=600&h=400&fit=crop",
+  "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=compress&w=600&h=400&fit=crop",
+  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=compress&w=600&h=400&fit=crop"
+];
+
+const fullWorkoutPlan = [
+  {
+    day: "Monday",
+    focus: "Full Body Strength",
+    exercises: [
+      "Barbell Squats 4x8", "Deadlifts 3x6", "Bench Press 4x8",
+      "Pull-ups 3x8", "Plank 3x1min"
+    ]
+  },
+  {
+    day: "Tuesday",
+    focus: "HIIT Cardio",
+    exercises: [
+      "Burpees 30sec", "Mountain Climbers 30sec", "Jump Squats 30sec",
+      "Rest 15sec (Repeat 5 rounds)"
+    ]
+  },
+  {
+    day: "Wednesday",
+    focus: "Upper Body & Core",
+    exercises: [
+      "Push-ups 4x12", "Dumbbell Rows 3x10", "Shoulder Press 3x10",
+      "Russian Twists 3x20", "Bicycle Crunches 3x15"
+    ]
+  },
+  {
+    day: "Thursday",
+    focus: "Lower Body Strength",
+    exercises: [
+      "Lunges 3x12", "Leg Press 4x10", "Romanian Deadlifts 3x8",
+      "Calf Raises 3x15", "Glute Bridges 3x12"
+    ]
+  },
+  {
+    day: "Friday",
+    focus: "Active Recovery",
+    exercises: [
+      "Yoga Flow 30min", "Foam Rolling 15min", 
+      "Dynamic Stretching 20min"
+    ]
+  },
+  {
+    day: "Saturday",
+    focus: "Functional Training",
+    exercises: [
+      "Kettlebell Swings 3x15", "Battle Ropes 3x1min", 
+      "Box Jumps 3x10", "Medicine Ball Slams 3x12"
+    ]
+  },
+  {
+    day: "Sunday",
+    focus: "Rest & Mobility",
+    exercises: [
+      "Yin Yoga 45min", "Mobility Drills 20min", 
+      "Breathing Exercises 10min"
+    ]
+  }
+];
+
+class ProgressTracker extends React.Component {
+  state = {
+    waterIntake: 0,
+    dailyGoal: 3000,
+    workoutProgress: Array(7).fill(false)
+  };
+
+  handleWaterChange = (amount) => {
+    this.setState(prev => ({
+      waterIntake: Math.max(0, prev.waterIntake + amount)
+    }));
+  };
+
+  toggleWorkoutDay = (index) => {
+    this.setState(prev => ({
+      workoutProgress: prev.workoutProgress.map((val, i) => 
+        i === index ? !val : val
+      )
+    }));
+  };
+
+  render() {
+    const { waterIntake, dailyGoal, workoutProgress } = this.state;
+    const progress = (waterIntake / dailyGoal) * 100;
+
+    return (
+      <div className="progress-tracker">
+        <h2><i className="fas fa-chart-line"></i> Daily Progress</h2>
+        <div className="checklist-item">
+          <h3><i className="fas fa-tint"></i> Water Intake</h3>
+          <div className="water-tracker">
+            <div className="water-progress" style={{ width: `${progress}%` }}></div>
+            <span>{waterIntake}ml / {dailyGoal}ml</span>
+          </div>
+          <div className="water-controls">
+            <button onClick={() => this.handleWaterChange(250)}>+250ml</button>
+            <button onClick={() => this.handleWaterChange(500)}>+500ml</button>
+            <button onClick={() => this.handleWaterChange(-250)}>-250ml</button>
+          </div>
+        </div>
+        <div className="checklist-item">
+          <h3><i className="fas fa-dumbbell"></i> 7-Day Workout Plan</h3>
+          {fullWorkoutPlan.map((day, index) => (
+            <div key={day.day} className="workout-day">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={workoutProgress[index]}
+                  onChange={() => this.toggleWorkoutDay(index)}
+                />
+                <strong>{day.day}</strong>: {day.focus}
+              </label>
+              <ul>
 
 
 
