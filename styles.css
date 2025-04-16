@@ -16,8 +16,8 @@ body {
   margin: 20px 0;
 }
 
-.side-images {
-  flex: 0 0 180px;
+.side-column {
+  flex: 0 0 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,22 +25,12 @@ body {
   padding: 1rem 0.5rem;
 }
 
-.side-images img {
-  width: 140px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 1.1rem;
-  box-shadow: 0 2px 16px rgba(252, 87, 94, 0.15);
-  border: 3px solid #f7b42c;
-  background: #fffbe6;
-}
-
 .side-symbols {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.7rem;
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .side-symbols i {
@@ -50,6 +40,17 @@ body {
   border-radius: 50%;
   padding: 0.3em;
   box-shadow: 0 1px 4px rgba(247, 180, 44, 0.13);
+}
+
+.side-images-list img {
+  width: 130px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px rgba(252, 87, 94, 0.15);
+  border: 3px solid #f7b42c;
+  background: #fffbe6;
+  display: block;
 }
 
 .app-container {
@@ -124,26 +125,6 @@ h3 i {
 .checklist-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 24px rgba(252, 87, 94, 0.2);
-}
-
-.app-container::before {
-  content: '';
-  position: absolute;
-  top: -60px; left: -60px;
-  width: 180px; height: 180px;
-  background: radial-gradient(circle, rgba(252, 87, 94, 0.33) 60%, transparent 100%);
-  border-radius: 50%;
-  z-index: 0;
-}
-
-.app-container::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; right: -80px;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(247, 180, 44, 0.33) 60%, transparent 100%);
-  border-radius: 50%;
-  z-index: 0;
 }
 
 button {
@@ -300,7 +281,7 @@ button:active {
     flex-direction: column;
     align-items: center;
   }
-  .side-images {
+  .side-column {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -316,9 +297,9 @@ button:active {
     padding: 1.2rem 0.8rem;
     border-radius: 1.5rem;
   }
-  .side-images img {
-    width: 100px;
-    height: 80px;
+  .side-images-list img {
+    width: 90px;
+    height: 65px;
   }
 }
 
@@ -327,8 +308,8 @@ button:active {
     margin: 5px;
     padding: 1rem 0.6rem;
   }
-  .side-images img {
-    width: 70px;
-    height: 50px;
+  .side-images-list img {
+    width: 60px;
+    height: 40px;
   }
 }
