@@ -251,91 +251,34 @@ button:active {
   font-weight: 500;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .app-container {
-    margin: 10px;
-    padding: 1.2rem 0.8rem;
-    border-radius: 1.5rem;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
-
-  .water-controls {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  button {
-    padding: 0.6em 1.2em;
-    font-size: 0.9rem;
-  }
-
-  .meal-generator .meal-controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .meal-generator select {
-    width: 100%;
-  }
-}
-
-@media (max-width: 400px) {
-  .app-container {
-    margin: 5px;
-    padding: 1rem 0.6rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  .checklist-item {
-    padding: 1rem 0.8rem;
-  }
-
-  .workout-day {
-    padding: 0.5em 0.7em;
-  }
-}
-
+/* Side Column Styles */
 .side-column {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 150px;
+  padding: 1rem;
 }
 
 .side-symbols {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .side-symbols i {
-  font-size: 24px;
+  font-size: 1.5rem; /* Adjust icon size for smaller screens */
   color: #f7b42c;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .side-images img {
-  width: 100px;
-  height: 100px;
+  width: 80px; /* Adjust image size for smaller screens */
+  height: 80px;
   object-fit: cover;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
 }
 
 .main-layout {
@@ -343,3 +286,64 @@ button:active {
   justify-content: space-between;
   align-items: flex-start;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center content horizontally */
+  }
+
+  .side-column {
+    flex-direction: row; /* Arrange symbols and images in a row */
+    width: 100%; /* Take full width */
+    justify-content: center; /* Center content */
+    align-items: center;
+    margin-bottom: 1rem; /* Add some spacing */
+  }
+
+  .side-symbols {
+    flex-direction: row; /* Symbols in a row */
+    justify-content: center; /* Center symbols */
+    width: auto; /* Adjust width */
+  }
+
+  .side-symbols i {
+    margin: 0 0.5rem; /* Space out symbols */
+  }
+
+  .side-images {
+    display: flex; /* Arrange images in a row */
+    justify-content: center; /* Center images */
+    flex-wrap: wrap; /* Wrap images if needed */
+  }
+
+  .side-images img {
+    margin: 0.5rem; /* Space out images */
+  }
+
+  .app-container {
+    width: 100%; /* App container takes full width */
+    margin: 10px 0; /* Adjust margin */
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.8rem; /* Further reduce title size */
+  }
+
+  .side-symbols i {
+    font-size: 1.2rem; /* Further reduce icon size */
+  }
+
+  .side-images img {
+    width: 60px; /* Further reduce image size */
+    height: 60px;
+  }
+
+  .checklist-item {
+    padding: 1rem 0.5rem; /* Reduce padding */
+  }
+}
+
