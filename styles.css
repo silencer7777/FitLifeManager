@@ -29,7 +29,7 @@ h1 {
   font-size: 2.2rem;
   color: #fc575e;
   letter-spacing: 1px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.2rem;
   font-weight: 800;
   text-shadow: 0 2px 8px rgba(247, 180, 44, 0.2);
 }
@@ -55,7 +55,6 @@ h2 i {
   color: #fc575e;
 }
 
-/* Section Headings */
 h3 {
   color: #fc575e;
   font-size: 1.2rem;
@@ -76,7 +75,7 @@ h3 i {
   background: linear-gradient(120deg, #fffbe6 0%, #ffe0e9 100%);
   border-radius: 1.2rem;
   box-shadow: 0 2px 12px rgba(252, 87, 94, 0.13);
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   padding: 1.5rem 1.2rem;
   position: relative;
   overflow: hidden;
@@ -218,6 +217,30 @@ button:active {
   font-size: 1em;
 }
 
+/* Workout Plan Selector */
+.workout-plan-selector {
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.workout-plan-selector select {
+  border-radius: 1.2em;
+  border: 1px solid #fc575e;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  background: #fffbe6;
+  color: #fc575e;
+  font-weight: 600;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.workout-plan-selector select:focus {
+  border: 2px solid #f7b42c;
+}
+
 /* Meal Generator */
 .meal-generator .meal-controls {
   display: flex;
@@ -251,66 +274,25 @@ button:active {
   font-weight: 500;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .app-container {
-    margin: 10px;
-    padding: 1.2rem 0.8rem;
-    border-radius: 1.5rem;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
-
-  .water-controls {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  button {
-    padding: 0.6em 1.2em;
-    font-size: 0.9rem;
-  }
-
-  .meal-generator .meal-controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .meal-generator select {
-    width: 100%;
-  }
+/* Layout: Main Columns */
+.main-layout {
+  display: grid;
+  grid-template-columns: 160px 1fr 160px;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
-@media (max-width: 400px) {
-  .app-container {
-    margin: 5px;
-    padding: 1rem 0.6rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  .checklist-item {
-    padding: 1rem 0.8rem;
-  }
-
-  .workout-day {
-    padding: 0.5em 0.7em;
-  }
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
+.progress-tracker, .meal-generator {
+  margin-bottom: 2.5rem;
+}
+
+/* Side Columns */
 .side-column {
   display: flex;
   flex-direction: column;
@@ -336,10 +318,75 @@ button:active {
   height: 100px;
   object-fit: cover;
   margin-bottom: 5px;
+  border-radius: 0.8em;
+  box-shadow: 0 1px 8px rgba(252, 87, 94, 0.12);
 }
 
-.main-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+/* Responsive Design */
+@media (max-width: 1020px) {
+  .main-layout {
+    grid-template-columns: 120px 1fr 120px;
+    gap: 1rem;
+  }
+  .side-column {
+    width: 110px;
+  }
+  .side-images img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 800px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .side-column {
+    display: none;
+  }
+  .main-content {
+    gap: 1.2rem;
+  }
+  .app-container {
+    margin: 10px;
+    padding: 1.2rem 0.8rem;
+    border-radius: 1.5rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 0.9rem;
+  }
+  .meal-generator .meal-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .meal-generator select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .app-container {
+    margin: 5px;
+    padding: 1rem 0.6rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .checklist-item {
+    padding: 1rem 0.8rem;
+  }
+  .workout-day {
+    padding: 0.5em 0.7em;
+  }
 }
