@@ -1,21 +1,20 @@
 // app.js
 
-// --- Data Arrays ---
-
+// --- Fixed Image Arrays ---
 const workoutImages = [
   "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=600&h=400&fit=crop",
   "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&w=600&h=400&fit=crop",
   "https://images.pexels.com/photos/2780768/pexels-photo-2780768.jpeg?auto=compress&w=600&h=400&fit=crop",
   "https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&w=600&h=400&fit=crop",
-  "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&w=600&h=400&fit=crop"
 ];
 
 const mealImages = [
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&w=600&h=400&fit=crop",
-  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=compress&w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=compress&w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=compress&w=600&h=400&fit=crop"
+  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&w=600&h=400&fit=crop", // 1
+  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop", // 2
+  "https://pplx-res.cloudinary.com/image/private/user_uploads/53136423/c9f8a249-462c-4aaf-ad98-966450c628d0/image.jpg", // 3 (your Cloudinary image)
+  "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=600&h=400&fit=crop", // 4 (new working image)
+  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=compress&w=600&h=400&fit=crop" // 5
 ];
 
 const leftSymbols = [
@@ -147,7 +146,6 @@ const fullWorkoutPlan = [
 ];
 
 // --- Weekly Plans Mapping ---
-
 const weeklyPlans = {
   full: fullWorkoutPlan,
   strength: [
@@ -200,7 +198,7 @@ function SideColumn({ symbols, images }) {
       </div>
       <div className="side-images">
         {images.map((img, i) => (
-          <img key={i} src={img} alt={`img${i}`} />
+          <img key={i} src={img} alt={`img${i + 1}`} />
         ))}
       </div>
     </div>
@@ -350,5 +348,4 @@ function App() {
 }
 
 // --- Render App ---
-
 ReactDOM.render(<App />, document.getElementById('root'));
