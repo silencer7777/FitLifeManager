@@ -1,4 +1,4 @@
-    const workoutImages = [
+  const workoutImages = [
       "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=600&h=400&fit=crop",
       "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&w=600&h=400&fit=crop",
       "https://images.pexels.com/photos/2780768/pexels-photo-2780768.jpeg?auto=compress&w=600&h=400&fit=crop",
@@ -131,4 +131,3 @@
         focus: "Functional Training",
         exercises: [
           "Kettlebell Swings 3x15", "Battle Ropes 3x1min",
-
