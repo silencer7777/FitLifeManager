@@ -1,376 +1,345 @@
 /* App Background */
 body {
   min-height: 100vh;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-family: 'Segoe UI', 'Arial', sans-serif !important;
-  background: linear-gradient(135deg, #f7b42c 0%, #fc575e 100%) !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f7b42c 0%, #fc575e 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /* App Container */
 .app-container {
-  background: rgba(255,255,255,0.95) !important;
-  border-radius: 2rem !important;
-  box-shadow: 0 8px 32px rgba(44,62,80,0.15) !important;
-  max-width: 900px !important;
-  width: 100% !important;
-  margin: 20px 10px !important;
-  padding: 2rem 1.5rem !important;
-  position: relative !important;
-  overflow: hidden !important;
-  font-size:16px !important;
+  background: rgba(255,255,255,0.95);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.15);
+  max-width: 900px;
+  width: 100%;
+  margin: 20px 10px;
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 /* App Title */
 h1 {
-  text-align: center !important;
-  font-size: 2.2rem !important;
-  color: #fc575e !important;
-  letter-spacing: 1px !important;
-  margin-bottom: 1.5rem !important;
-  font-weight: 800 !important;
-  text-shadow: 0 2px 8px rgba(247, 180, 44, 0.2) !important;
+  text-align: center;
+  font-size: 2.2rem;
+  color: #fc575e;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(247, 180, 44, 0.2);
 }
 
 h1 i {
-  margin-right: 10px !important;
-  color: #f7b42c !important;
+  margin-right: 10px;
+  color: #f7b42c;
 }
 
 /* Section Headings */
 h2 {
-  color: #f7b42c !important;
-  font-size: 1.6rem !important;
-  margin-bottom: 1rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 1px !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5em !important;
+  color: #f7b42c;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 h2 i {
-  color: #fc575e !important;
+  color: #fc575e;
 }
 
 /* Section Headings */
 h3 {
-  color: #fc575e !important;
-  font-size: 1.2rem !important;
-  margin-bottom: 0.5rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 1px !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5em !important;
+  color: #fc575e;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 h3 i {
-  color: #f7b42c !important;
+  color: #f7b42c;
 }
 
 /* Card Style */
 .checklist-item {
-  background: linear-gradient(120deg, #fffbe6 0%, #ffe0e9 100%) !important;
-  border-radius: 1.2rem !important;
-  box-shadow: 0 2px 12px rgba(252, 87, 94, 0.13) !important;
-  margin: 1.5rem 0 !important;
-  padding: 1.5rem 1.2rem !important;
-  position: relative !important;
-  overflow: hidden !important;
-  transition: transform 0.2s !important;
+  background: linear-gradient(120deg, #fffbe6 0%, #ffe0e9 100%);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(252, 87, 94, 0.13);
+  margin: 1.5rem 0;
+  padding: 1.5rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
 }
 
 .checklist-item:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 6px 24px rgba(252, 87, 94, 0.2) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(252, 87, 94, 0.2);
 }
 
 /* Fun Shapes */
 .app-container::before {
-  content: '' !important;
-  position: absolute !important;
-  top: -60px !important;
-  left: -60px !important;
-  width: 180px !important;
-  height: 180px !important;
-  background: radial-gradient(circle, rgba(252, 87, 94, 0.33) 60%, transparent 100%) !important;
-  border-radius: 50% !important;
-  z-index: 0 !important;
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(252, 87, 94, 0.33) 60%, transparent 100%);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .app-container::after {
-  content: '' !important;
-  position: absolute !important;
-  bottom: -80px !important;
-  right: -80px !important;
-  width: 200px !important;
-  height: 200px !important;
-  background: radial-gradient(circle, rgba(247, 180, 44, 0.33) 60%, transparent 100%) !important;
-  border-radius: 50% !important;
-  z-index: 0 !important;
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(247, 180, 44, 0.33) 60%, transparent 100%);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 /* Buttons */
 button {
-  background: linear-gradient(90deg, #fc575e 0%, #f7b42c 100%) !important;
-  color: #fff !important;
-  border: none !important;
-  border-radius: 2rem !important;
-  padding: 0.7em 1.5em !important;
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  margin: 0.3em 0.5em 0.3em 0 !important;
-  cursor: pointer !important;
-  box-shadow: 0 2px 8px rgba(252, 87, 94, 0.13) !important;
-  transition: all 0.2s ease !important;
+  background: linear-gradient(90deg, #fc575e 0%, #f7b42c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7em 1.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.3em 0.5em 0.3em 0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(252, 87, 94, 0.13);
+  transition: all 0.2s ease;
 }
 
 button:hover {
-  background: linear-gradient(90deg, #f7b42c 0%, #fc575e 100%) !important;
-  transform: scale(1.05) !important;
+  background: linear-gradient(90deg, #f7b42c 0%, #fc575e 100%);
+  transform: scale(1.05);
 }
 
 button:active {
-  transform: scale(0.98) !important;
+  transform: scale(0.98);
 }
 
 /* Water Tracker */
 .water-tracker {
-  background: #fff !important;
-  border-radius: 1em !important;
-  box-shadow: 0 1px 4px rgba(247, 180, 44, 0.13) !important;
-  margin: 0.5em 0 1em 0 !important;
-  padding: 0.5em 1em !important;
-  position: relative !important;
-  overflow: hidden !important;
-  height: 2.2em !important;
-  display: flex !important;
-  align-items: center !important;
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 1px 4px rgba(247, 180, 44, 0.13);
+  margin: 0.5em 0 1em 0;
+  padding: 0.5em 1em;
+  position: relative;
+  overflow: hidden;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
 }
 
 .water-progress {
-  position: absolute !important;
-  left: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  background: linear-gradient(90deg, #fc575e 0%, #f7b42c 100%) !important;
-  border-radius: 1em !important;
-  z-index: 0 !important;
-  transition: width 0.4s cubic-bezier(.4,2,.6,1) !important;
-  height: 100% !important;
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: linear-gradient(90deg, #fc575e 0%, #f7b42c 100%);
+  border-radius: 1em;
+  z-index: 0;
+  transition: width 0.4s cubic-bezier(.4,2,.6,1);
+  height: 100%;
 }
 
 .water-tracker span {
-  position: relative !important;
-  z-index: 1 !important;
-  font-weight: 700 !important;
-  color: #fc575e !important;
-  margin-left: 0.5em !important;
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  color: #fc575e;
+  margin-left: 0.5em;
 }
 
 /* Workout Day */
 .workout-day {
-  margin-bottom: 1.2em !important;
-  background: rgba(255, 251, 230, 0.8) !important;
-  border-radius: 0.8em !important;
-  padding: 0.7em 1em !important;
-  box-shadow: 0 1px 4px rgba(247, 180, 44, 0.13) !important;
-  position: relative !important;
-  display: flex !important;
-  flex-direction: column !important;
+  margin-bottom: 1.2em;
+  background: rgba(255, 251, 230, 0.8);
+  border-radius: 0.8em;
+  padding: 0.7em 1em;
+  box-shadow: 0 1px 4px rgba(247, 180, 44, 0.13);
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .workout-day label {
-  font-size: 1.1em !important;
-  font-weight: 600 !important;
-  color: #fc575e !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5em !important;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #fc575e;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .workout-day input[type="checkbox"] {
-  accent-color: #fc575e !important;
-  width: 1.2em !important;
-  height: 1.2em !important;
-  margin-right: 0.5em !important;
+  accent-color: #fc575e;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
 }
 
 .workout-day ul {
-  margin: 0.5em 0 0 1.5em !important;
-  padding: 0 !important;
-  list-style: none !important;
+  margin: 0.5em 0 0 1.5em;
+  padding: 0;
+  list-style: none;
 }
 
 .workout-day ul li {
-  margin-bottom: 0.2em !important;
-  font-size: 1em !important;
-  color: #333 !important;
-  position: relative !important;
-  padding-left: 1.5em !important;
+  margin-bottom: 0.2em;
+  font-size: 1em;
+  color: #333;
+  position: relative;
+  padding-left: 1.5em;
 }
 
 .workout-day ul li::before {
-  content: '\f44b' !important;
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-  color: #f7b42c !important;
-  position: absolute !important;
-  left: 0 !important;
-  top: 0 !important;
-  font-size: 1em !important;
+  content: '\f44b';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #f7b42c;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1em;
 }
 
 /* Meal Generator */
 .meal-generator .meal-controls {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  gap: 1em !important;
-  margin-bottom: 1em !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
 }
 
 .meal-generator select {
-  border-radius: 1.2em !important;
-  border: 1px solid #fc575e !important;
-  padding: 0.5em 1em !important;
-  font-size: 1em !important;
-  background: #fffbe6 !important;
-  color: #fc575e !important;
-  font-weight: 600 !important;
-  outline: none !important;
-  transition: border 0.2s !important;
-  flex-grow: 1 !important;
-  min-width: 150px !important;
+  border-radius: 1.2em;
+  border: 1px solid #fc575e;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background: #fffbe6;
+  color: #fc575e;
+  font-weight: 600;
+  outline: none;
+  transition: border 0.2s;
+  flex-grow: 1;
+  min-width: 150px;
 }
 
 .meal-generator select:focus {
-  border: 2px solid #f7b42c !important;
+  border: 2px solid #f7b42c;
 }
 
 .meal-generator p {
-  font-size: 1.1em !important;
-  color: #333 !important;
-  font-weight: 500 !important;
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 500;
 }
 
-/* Side Column Styles */
-.side-column {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  width: 150px !important;
-  padding: 1rem !important;
-}
-
-.side-symbols {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  margin-bottom: 1rem !important;
-}
-
-.side-symbols i {
-  font-size: 1.5rem !important; /* Adjust icon size for smaller screens */
-  color: #f7b42c !important;
-  margin-bottom: 0.5rem !important;
-}
-
-.side-images {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-}
-
-.side-images img {
-  width: 80px !important; /* Adjust image size for smaller screens */
-  height: 80px !important;
-  object-fit: cover !important;
-  margin-bottom: 0.5rem !important;
-  border-radius: 10px !important;
-  max-width: 100% !important; /* Make images responsive */
-}
-
-.main-layout {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: flex-start !important;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .main-layout {
-    flex-direction: column !important; /* Stack columns vertically */
-    align-items: center !important; /* Center content horizontally */
-  }
-
-  .side-column {
-    flex-direction: row !important; /* Arrange symbols and images in a row */
-    width: 100% !important; /* Take full width */
-    justify-content: center !important; /* Center content */
-    align-items: center !important;
-    margin-bottom: 1rem !important; /* Add some spacing */
-  }
-
-  .side-symbols {
-    flex-direction: row !important; /* Symbols in a row */
-    justify-content: center !important; /* Center symbols */
-    width: auto !important; /* Adjust width */
-  }
-
-  .side-symbols i {
-    margin: 0 0.5rem !important; /* Space out symbols */
-  }
-
-  .side-images {
-    display: flex !important; /* Arrange images in a row */
-    justify-content: center !important; /* Center images */
-    flex-wrap: wrap !important; /* Wrap images if needed */
-  }
-
-  .side-images img {
-    margin: 0.5rem !important; /* Space out images */
-  }
-
+/* Responsive */
+@media (max-width: 700px) {
   .app-container {
-    width: 100% !important; /* App container takes full width */
-    margin: 10px 0 !important; /* Adjust margin */
-    padding: 1.5rem !important;
+    margin: 10px;
+    padding: 1.2rem 0.8rem;
+    border-radius: 1.5rem;
   }
 
-    h1 {
-        font-size: 1.8rem !important;
-    }
+  h1 {
+    font-size: 1.8rem;
+  }
 
-    h2 {
-        font-size: 1.4rem !important;
-    }
+  h2 {
+    font-size: 1.4rem;
+  }
 
-    h3 {
-        font-size: 1.2rem !important;
-    }
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  .water-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 0.9rem;
+  }
+
+  .meal-generator .meal-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .meal-generator select {
+    width: 100%;
+  }
 }
 
 @media (max-width: 400px) {
+  .app-container {
+    margin: 5px;
+    padding: 1rem 0.6rem;
+  }
+
   h1 {
-    font-size: 1.8rem !important; /* Further reduce title size */
-  }
-
-  .side-symbols i {
-    font-size: 1.2rem !important; /* Further reduce icon size */
-  }
-
-  .side-images img {
-    width: 60px !important; /* Further reduce image size */
-    height: 60px !important;
+    font-size: 1.5rem;
   }
 
   .checklist-item {
-    padding: 1rem 0.5rem !important; /* Reduce padding */
+    padding: 1rem 0.8rem;
+  }
+
+  .workout-day {
+    padding: 0.5em 0.7em;
   }
 }
 
+.side-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+.side-symbols {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.side-symbols i {
+  font-size: 24px;
+  color: #f7b42c;
+  margin-bottom: 5px;
+}
+
+.side-images img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.main-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
