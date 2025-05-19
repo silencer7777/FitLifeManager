@@ -1,193 +1,342 @@
-import React from "react";
+const workoutImages = [
+  "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/2780768/pexels-photo-2780768.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&w=600&h=400&fit=crop"
+];
 
-// Meal data categorized by diet type
+const mealImages = [
+  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop",
+  "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=compress&w=600&h=400&fit=crop",
+  "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=compress&w=600&h=400&fit=crop",
+  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=compress&w=600&h=400&fit=crop"
+];
+
+const leftSymbols = [
+  "fa-dumbbell",
+  "fa-running",
+  "fa-heartbeat",
+  "fa-bolt",
+  "fa-bicycle",
+  "fa-person-walking"
+];
+
+const rightSymbols = [
+  "fa-utensils",
+  "fa-apple-alt",
+  "fa-seedling",
+  "fa-carrot",
+  "fa-lemon",
+  "fa-pepper-hot"
+];
+
 const mealCategories = {
   vegan: [
-    {
-      name: "Vegan Buddha Bowl",
-      ingredients: [
-        "1 cup quinoa",
-        "1 sweet potato",
-        "1 cup chickpeas",
-        "1 avocado",
-        "1 cup spinach",
-        "Tahini dressing"
-      ],
-      steps: [
-        "Cook quinoa and set aside.",
-        "Roast sweet potatoes and chickpeas.",
-        "Assemble bowl with spinach, quinoa, sweet potato, chickpeas, and avocado.",
-        "Drizzle with tahini dressing and serve."
-      ]
-    },
-    {
-      name: "Vegan Stir-Fry",
-      ingredients: [
-        "2 cups mixed vegetables",
-        "1 block tofu",
-        "2 tbsp soy sauce",
-        "1 tbsp sesame oil",
-        "1 tsp ginger",
-        "1 cup brown rice"
-      ],
-      steps: [
-        "Cook brown rice.",
-        "Sauté tofu until golden brown.",
-        "Add vegetables and stir-fry with soy sauce and sesame oil.",
-        "Serve with rice."
-      ]
-    }
+    "Lentil & Sweet Potato Curry",
+    "Chickpea Buddha Bowl",
+    "Tofu Banh Mi",
+    "Jackfruit Tacos",
+    "Mushroom Walnut Bolognese",
+    "Ethiopian Misir Wot",
+    "Korean Bibimbap (Vegan)",
+    "Jamaican Callaloo",
+    "Indian Chana Masala",
+    "Lebanese Mujadara",
+    "Thai Green Papaya Salad",
+    "Nigerian Bean Porridge"
   ],
-  keto: [
-    {
-      name: "Keto Chicken Alfredo",
-      ingredients: [
-        "2 chicken breasts",
-        "1 cup heavy cream",
-        "1/2 cup parmesan cheese",
-        "1 zucchini (spiralized)",
-        "1 tbsp olive oil"
-      ],
-      steps: [
-        "Cook chicken in olive oil and set aside.",
-        "In the same pan, heat cream and parmesan to make the sauce.",
-        "Add spiralized zucchini and cooked chicken.",
-        "Simmer for 5 minutes and serve."
-      ]
-    },
-    {
-      name: "Keto Egg Muffins",
-      ingredients: [
-        "6 eggs",
-        "1/2 cup spinach",
-        "1/4 cup cheese",
-        "1/4 cup diced bell peppers",
-        "Salt and pepper"
-      ],
-      steps: [
-        "Preheat oven to 375°F (190°C).",
-        "Mix all ingredients in a bowl.",
-        "Pour into muffin tin and bake for 20 minutes.",
-        "Cool slightly and enjoy."
-      ]
-    }
+  highProtein: [
+    "Grilled Salmon Teriyaki",
+    "Turkey & Quinoa Stuffed Peppers",
+    "Beef Bulgogi Bowl",
+    "Greek Chicken Souvlaki",
+    "Tuna Poke Bowl",
+    "Peruvian Lomo Saltado",
+    "Moroccan Lamb Tagine",
+    "Vietnamese Pho Bo",
+    "Brazilian Feijoada",
+    "Filipino Adobo Chicken",
+    "South African Bobotie",
+    "Argentinian Asado"
   ],
-  "high-protein": [
-    {
-      name: "Grilled Salmon with Quinoa",
-      ingredients: [
-        "1 salmon fillet",
-        "1 cup cooked quinoa",
-        "1/2 cup steamed broccoli",
-        "Lemon juice",
-        "Salt and pepper"
-      ],
-      steps: [
-        "Season salmon with salt, pepper, and lemon juice.",
-        "Grill salmon until cooked through.",
-        "Serve with quinoa and steamed broccoli."
-      ]
-    },
-    {
-      name: "Turkey Chili",
-      ingredients: [
-        "1 lb ground turkey",
-        "1 can kidney beans",
-        "1 can diced tomatoes",
-        "1 onion",
-        "Chili powder"
-      ],
-      steps: [
-        "Sauté onion, then brown turkey.",
-        "Add beans, tomatoes, and chili powder.",
-        "Simmer for 20 minutes and serve."
-      ]
-    }
+  lowCalorie: [
+    "Zucchini Noodles Primavera",
+    "Shrimp Ceviche",
+    "Cauliflower Fried Rice",
+    "Turkish Shepherd's Salad",
+    "Vietnamese Goi Cuon",
+    "Japanese Hiyayakko",
+    "Spanish Gazpacho",
+    "Lebanese Fattoush",
+    "Mexican Ceviche de Camaron",
+    "Greek Spanakorizo",
+    "Thai Larb Gai",
+    "Italian Caprese Stuffed Avocados"
   ],
-  "low-carb": [
-    {
-      name: "Zucchini Noodles with Pesto",
-      ingredients: [
-        "2 zucchinis (spiralized)",
-        "1/2 cup pesto",
-        "Cherry tomatoes",
-        "Parmesan cheese"
-      ],
-      steps: [
-        "Sauté zucchini noodles briefly.",
-        "Toss with pesto and cherry tomatoes.",
-        "Top with parmesan and serve."
-      ]
-    },
-    {
-      name: "Cauliflower Fried Rice",
-      ingredients: [
-        "2 cups riced cauliflower",
-        "2 eggs",
-        "1/2 cup peas and carrots",
-        "2 tbsp soy sauce",
-        "1 tbsp sesame oil"
-      ],
-      steps: [
-        "Sauté vegetables and cauliflower rice.",
-        "Push to the side and scramble eggs.",
-        "Mix everything with soy sauce and sesame oil.",
-        "Serve hot."
-      ]
-    }
+  cultural: [
+    "Japanese Okonomiyaki",
+    "Senegalese Thieboudienne",
+    "Polish Pierogi",
+    "Malaysian Laksa",
+    "Omani Shuwa",
+    "Guatemalan Pepian",
+    "Armenian Dolma",
+    "Finnish Lohikeitto",
+    "Portuguese Bacalhau",
+    "Cuban Ropa Vieja",
+    "Iraqi Masgouf",
+    "Australian Wattleseed Crusted Barramundi"
+  ],
+  balanced: [
+    "Mediterranean Grain Bowl",
+    "Balinese Nasi Campur",
+    "Turkish Menemen",
+    "Korean Bibimbap",
+    "Egyptian Koshari",
+    "Filipino Sinigang",
+    "Hungarian Goulash",
+    "Persian Fesenjan",
+    "Ukrainian Borscht",
+    "Colombian Sancocho",
+    "Nepalese Dal Bhat",
+    "Tibetan Thukpa"
   ]
 };
 
+const fullWorkoutPlan = [
+  {
+    day: "Monday",
+    focus: "Full Body Strength",
+    exercises: [
+      "Barbell Squats 4x8",
+      "Deadlifts 3x6",
+      "Bench Press 4x8",
+      "Pull-ups 3x8",
+      "Plank 3x1min"
+    ]
+  },
+  {
+    day: "Tuesday",
+    focus: "HIIT Cardio",
+    exercises: [
+      "Burpees 30sec",
+      "Mountain Climbers 30sec",
+      "Jump Squats 30sec",
+      "Rest 15sec (Repeat 5 rounds)"
+    ]
+  },
+  {
+    day: "Wednesday",
+    focus: "Upper Body & Core",
+    exercises: [
+      "Push-ups 4x12",
+      "Dumbbell Rows 3x10",
+      "Shoulder Press 3x10",
+      "Russian Twists 3x20",
+      "Bicycle Crunches 3x15"
+    ]
+  },
+  {
+    day: "Thursday",
+    focus: "Lower Body Strength",
+    exercises: [
+      "Lunges 3x12",
+      "Leg Press 4x10",
+      "Romanian Deadlifts 3x8",
+      "Calf Raises 3x15",
+      "Glute Bridges 3x12"
+    ]
+  },
+  {
+    day: "Friday",
+    focus: "Active Recovery",
+    exercises: [
+      "Yoga Flow 30min",
+      "Foam Rolling 15min",
+      "Dynamic Stretching 20min"
+    ]
+  },
+  {
+    day: "Saturday",
+    focus: "Functional Training",
+    exercises: [
+      "Kettlebell Swings 3x15",
+      "Battle Ropes 3x1min",
+      "Box Jumps 3x10",
+      "Medicine Ball Slams 3x12"
+    ]
+  },
+  {
+    day: "Sunday",
+    focus: "Rest & Mobility",
+    exercises: [
+      "Yin Yoga 45min",
+      "Mobility Drills 20min",
+      "Breathing Exercises 10min"
+    ]
+  }
+];
+
+function SideColumn({ symbols, images, altPrefix }) {
+  return (
+    <div className="side-column">
+      <div className="side-symbols">
+        {symbols.map((icon, i) => (
+          <i key={icon} className={`fas ${icon}`}></i>
+        ))}
+      </div>
+      <div className="side-images-list">
+        {images.map((img, i) => (
+          <img key={img} src={img} alt={`${altPrefix} ${i + 1}`} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+class ProgressTracker extends React.Component {
+  state = {
+    waterIntake: 0,
+    dailyGoal: 3000,
+    workoutProgress: Array(7).fill(false)
+  };
+
+  handleWaterChange = (amount) => {
+    this.setState((prev) => ({
+      waterIntake: Math.max(0, prev.waterIntake + amount)
+    }));
+  };
+
+  toggleWorkoutDay = (index) => {
+    this.setState((prev) => ({
+      workoutProgress: prev.workoutProgress.map((val, i) =>
+        i === index ? !val : val
+      )
+    }));
+  };
+
+  render() {
+    const { waterIntake, dailyGoal, workoutProgress } = this.state;
+    const progress = (waterIntake / dailyGoal) * 100;
+
+    return (
+      <div className="progress-tracker">
+        <h2>
+          <i className="fas fa-chart-line"></i> Daily Progress
+        </h2>
+        <div className="checklist-item">
+          <h3>
+            <i className="fas fa-tint"></i> Water Intake
+          </h3>
+          <div className="water-tracker">
+            <div
+              className="water-progress"
+              style={{ width: `${progress}%` }}
+            ></div>
+            <span>
+              {waterIntake}ml / {dailyGoal}ml
+            </span>
+          </div>
+          <div className="water-controls">
+            <button onClick={() => this.handleWaterChange(250)}>+250ml</button>
+            <button onClick={() => this.handleWaterChange(500)}>+500ml</button>
+            <button onClick={() => this.handleWaterChange(-250)}>-250ml</button>
+          </div>
+        </div>
+        <div className="checklist-item">
+          <h3>
+            <i className="fas fa-dumbbell"></i> 7-Day Workout Plan
+          </h3>
+          {fullWorkoutPlan.map((day, index) => (
+            <div key={day.day} className="workout-day">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={workoutProgress[index]}
+                  onChange={() => this.toggleWorkoutDay(index)}
+                />
+                <strong>{day.day}</strong>: {day.focus}
+              </label>
+              <ul>
+                {day.exercises.map((ex) => (
+                  <li key={ex}>{ex}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
+
 class MealGenerator extends React.Component {
   state = {
-    meal: null,
-    selectedCategory: "vegan",
+    meal: "Click to generate",
+    selectedCategory: "balanced",
+    mealPhoto: mealImages[0]
   };
 
   generateMeal = () => {
     const { selectedCategory } = this.state;
     const meals = mealCategories[selectedCategory];
     const randomMeal = meals[Math.floor(Math.random() * meals.length)];
-    this.setState({ meal: randomMeal });
+    const mealPhoto = mealImages[Math.floor(Math.random() * mealImages.length)];
+    this.setState({ meal: randomMeal, mealPhoto });
   };
 
   handleCategoryChange = (e) => {
-    this.setState({ selectedCategory: e.target.value, meal: null });
+    this.setState({ selectedCategory: e.target.value });
   };
 
   render() {
-    const { meal, selectedCategory } = this.state;
-
     return (
       <div className="meal-generator">
-        <h2><i className="fas fa-utensils"></i> Meal Generator</h2>
-
-        <select value={selectedCategory} onChange={this.handleCategoryChange}>
-          {Object.keys(mealCategories).map((cat) => (
-            <option key={cat} value={cat}>{cat}</option>
-          ))}
-        </select>
-
-        <button onClick={this.generateMeal}>Generate Meal</button>
-
-        {meal && (
-          <div className="meal-details">
-            <h3>{meal.name}</h3>
-            <h4>Ingredients:</h4>
-            <ul>
-              {meal.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
-            </ul>
-            <h4>Steps:</h4>
-            <ol>
-              {meal.steps.map((step, i) => <li key={i}>{step}</li>)}
-            </ol>
-          </div>
-        )}
+        <h2>
+          <i className="fas fa-utensils"></i> Multi-Cultural Meal Generator
+        </h2>
+        <div className="meal-controls">
+          <select
+            value={this.state.selectedCategory}
+            onChange={this.handleCategoryChange}
+          >
+            <option value="vegan">Vegan</option>
+            <option value="highProtein">High Protein</option>
+            <option value="lowCalorie">Low Calorie</option>
+            <option value="cultural">Cultural Specials</option>
+            <option value="balanced">Balanced Meals</option>
+          </select>
+          <button onClick={this.generateMeal}>Generate Meal</button>
+        </div>
+        <div className="checklist-item">
+          <p>{this.state.meal}</p>
+          <img className="meal-photo" src={this.state.mealPhoto} alt="Meal" />
+        </div>
       </div>
     );
   }
 }
 
-export default MealGenerator;
+function App() {
+  return (
+    <div className="main-layout">
+      <SideColumn
+        symbols={leftSymbols}
+        images={workoutImages}
+        altPrefix="Workout"
+      />
+      <div className="app-container">
+        <h1>
+          <i className="fas fa-heartbeat"></i> Global Fitness Pro App
+        </h1>
+        <ProgressTracker />
+        <MealGenerator />
+      </div>
+      <SideColumn symbols={rightSymbols} images={mealImages} altPrefix="Meal" />
+    </div>
+  );
+}
 
-
+ReactDOM.render(<App />, document.getElementById("root"));
