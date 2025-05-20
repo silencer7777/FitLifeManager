@@ -1,20 +1,36 @@
-// app.js
-
-// --- Fixed Image Arrays ---
+// --- Expanded & Themed Image Arrays ---
 const workoutImages = [
-  "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=600&h=400&fit=crop",
-  "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&w=600&h=400&fit=crop",
-  "https://images.pexels.com/photos/2780768/pexels-photo-2780768.jpeg?auto=compress&w=600&h=400&fit=crop",
-  "https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&w=600&h=400&fit=crop",
-  "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&w=600&h=400&fit=crop"
+  // Strength
+  "https://images.pexels.com/photos/2261482/pexels-photo-2261482.jpeg?auto=compress&w=600&h=400&fit=crop", // Barbell squats
+  "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=600&h=400&fit=crop", // Dumbbell
+  "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&w=600&h=400&fit=crop", // Push-ups
+  // HIIT
+  "https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&w=600&h=400&fit=crop", // HIIT
+  "https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&w=600&h=400&fit=crop", // Mountain climbers
+  // Cardio
+  "https://images.pexels.com/photos/3757376/pexels-photo-3757376.jpeg?auto=compress&w=600&h=400&fit=crop", // Running
+  "https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg?auto=compress&w=600&h=400&fit=crop", // Cycling
+  "https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&w=600&h=400&fit=crop", // Rowing
+  // Recovery
+  "https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&w=600&h=400&fit=crop", // Yoga
+  "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&w=600&h=400&fit=crop"  // Stretching
 ];
 
 const mealImages = [
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&w=600&h=400&fit=crop", // 1
-  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop", // 2
-  "https://pplx-res.cloudinary.com/image/private/user_uploads/53136423/c9f8a249-462c-4aaf-ad98-966450c628d0/image.jpg", // 3 (your Cloudinary image)
-  "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=600&h=400&fit=crop", // 4 (new working image)
-  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=compress&w=600&h=400&fit=crop" // 5
+  // Vegan
+  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&w=600&h=400&fit=crop", // Vegan bowl
+  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop", // Vegan salad
+  // High Protein
+  "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=600&h=400&fit=crop", // Grilled salmon
+  "https://images.pexels.com/photos/5938/food-healthy-vegetables-potatoes.jpg?auto=compress&w=600&h=400&fit=crop", // Protein meal
+  // Low Calorie
+  "https://images.pexels.com/photos/593839/pexels-photo-593839.jpeg?auto=compress&w=600&h=400&fit=crop", // Zucchini noodles
+  // Cultural
+  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=compress&w=600&h=400&fit=crop", // Sushi
+  // Balanced
+  "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&w=600&h=400&fit=crop", // Balanced bowl
+  // User Cloudinary
+  "https://pplx-res.cloudinary.com/image/private/user_uploads/53136423/c9f8a249-462c-4aaf-ad98-966450c628d0/image.jpg" // Custom
 ];
 
 const leftSymbols = [
@@ -37,13 +53,13 @@ const rightSymbols = [
 
 const mealCategories = {
   vegan: [
-    "Lentil & Sweet Potato Curry", "Chickpea Buddha Bowl", "Tofu Banh Mi", 
+    "Lentil & Sweet Potato Curry", "Chickpea Buddha Bowl", "Tofu Banh Mi",
     "Jackfruit Tacos", "Mushroom Walnut Bolognese", "Ethiopian Misir Wot",
     "Korean Bibimbap (Vegan)", "Jamaican Callaloo", "Indian Chana Masala",
     "Lebanese Mujadara", "Thai Green Papaya Salad", "Nigerian Bean Porridge"
   ],
   highProtein: [
-    "Grilled Salmon Teriyaki", "Turkey & Quinoa Stuffed Peppers", 
+    "Grilled Salmon Teriyaki", "Turkey & Quinoa Stuffed Peppers",
     "Beef Bulgogi Bowl", "Greek Chicken Souvlaki", "Tuna Poke Bowl",
     "Peruvian Lomo Saltado", "Moroccan Lamb Tagine", "Vietnamese Pho Bo",
     "Brazilian Feijoada", "Filipino Adobo Chicken", "South African Bobotie",
@@ -71,7 +87,7 @@ const mealCategories = {
 
 const workoutPlans = {
   strength: [
-    "Push-ups: 3x12", "Pull-ups: 3x8", "Squats: 4x15", 
+    "Push-ups: 3x12", "Pull-ups: 3x8", "Squats: 4x15",
     "Deadlifts: 3x10", "Bench Press: 4x8", "Russian Twists: 3x20"
   ],
   hiit: [
@@ -125,7 +141,7 @@ const fullWorkoutPlan = [
     day: "Friday",
     focus: "Active Recovery",
     exercises: [
-      "Yoga Flow 30min", "Foam Rolling 15min", 
+      "Yoga Flow 30min", "Foam Rolling 15min",
       "Dynamic Stretching 20min"
     ]
   },
@@ -145,7 +161,6 @@ const fullWorkoutPlan = [
   }
 ];
 
-// --- Weekly Plans Mapping ---
 const weeklyPlans = {
   full: fullWorkoutPlan,
   strength: [
@@ -311,8 +326,8 @@ class MealGenerator extends React.Component {
       <div className="meal-generator">
         <h2><i className="fas fa-utensils"></i> Multi-Cultural Meal Generator</h2>
         <div className="meal-controls">
-          <select 
-            value={this.state.selectedCategory} 
+          <select
+            value={this.state.selectedCategory}
             onChange={this.handleCategoryChange}
           >
             <option value="vegan">Vegan</option>
