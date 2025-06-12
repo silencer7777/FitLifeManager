@@ -1,36 +1,36 @@
 // --- Expanded & Themed Image Arrays ---
 const workoutImages = [
   // Strength
-  "https://images.pexels.com/photos/2261482/pexels-photo-2261482.jpeg?auto=compress&w=600&h=400&fit=crop", // Barbell squats
-  "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=600&h=400&fit=crop", // Dumbbell
-  "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&w=600&h=400&fit=crop", // Push-ups
+  "https://images.pexels.com/photos/2261482/pexels-photo-2261482.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Barbell squats
+  "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Dumbbell
+  "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Push-ups
   // HIIT
-  "https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&w=600&h=400&fit=crop", // HIIT workout
-  "https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&w=600&h=400&fit=crop", // Mountain climbers
+  "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // HIIT workout
+  "https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Mountain climbers
   // Cardio
-  "https://images.pexels.com/photos/3757376/pexels-photo-3757376.jpeg?auto=compress&w=600&h=400&fit=crop", // Running
-  "https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg?auto=compress&w=600&h=400&fit=crop", // Cycling
-  "https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&w=600&h=400&fit=crop", // Rowing
+  "https://images.pexels.com/photos/3757376/pexels-photo-3757376.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Running
+  "https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Cycling
+  "https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Rowing
   // Recovery
-  "https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&w=600&h=400&fit=crop", // Yoga
-  "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&w=600&h=400&fit=crop"  // Stretching
+  "https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Yoga
+  "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"  // Stretching
 ];
 
 const mealImages = [
   // Vegan
-  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop", // Vegan salad
-  "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&w=600&h=400&fit=crop", // Vegan bowl
+  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Vegan salad
+  "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Vegan bowl
   // High Protein
-  "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=600&h=400&fit=crop", // Grilled salmon
-  "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&w=600&h=400&fit=crop", // Protein meal
+  "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Grilled salmon
+  "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Protein meal
   // Low Calorie
-  "https://images.pexels.com/photos/593839/pexels-photo-593839.jpeg?auto=compress&w=600&h=400&fit=crop", // Zucchini noodles
+  "https://images.pexels.com/photos/593839/pexels-photo-593839.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Zucchini noodles
   // Cultural
-  "https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg?auto=compress&w=600&h=400&fit=crop", // Sushi
+  "https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Sushi
   // Balanced
-  "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&w=600&h=400&fit=crop", // Balanced bowl
+  "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop", // Balanced bowl
   // Healthy meal
-  "https://images.pexels.com/photos/1640771/pexels-photo-1640771.jpeg?auto=compress&w=600&h=400&fit=crop" // Healthy meal
+  "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" // Healthy meal
 ];
 
 const leftSymbols = [
@@ -295,8 +295,6 @@ class ProgressTracker extends React.Component {
               </label>
               <ul>
                 {day.exercises.map(ex => <li key={ex}>{ex}</li>)}
-                )
-                }
               </ul>
             </div>
           ))}
