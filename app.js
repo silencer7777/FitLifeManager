@@ -295,6 +295,8 @@ class ProgressTracker extends React.Component {
               </label>
               <ul>
                 {day.exercises.map(ex => <li key={ex}>{ex}</li>)}
+                )
+                }
               </ul>
             </div>
           ))}
