@@ -5,7 +5,7 @@ const workoutImages = [
   "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=600&h=400&fit=crop", // Dumbbell
   "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&w=600&h=400&fit=crop", // Push-ups
   // HIIT
-  "https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&w=600&h=400&fit=crop", // HIIT
+  "https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&w=600&h=400&fit=crop", // HIIT workout
   "https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&w=600&h=400&fit=crop", // Mountain climbers
   // Cardio
   "https://images.pexels.com/photos/3757376/pexels-photo-3757376.jpeg?auto=compress&w=600&h=400&fit=crop", // Running
@@ -18,19 +18,19 @@ const workoutImages = [
 
 const mealImages = [
   // Vegan
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&w=600&h=400&fit=crop", // Vegan bowl
   "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&w=600&h=400&fit=crop", // Vegan salad
+  "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&w=600&h=400&fit=crop", // Vegan bowl
   // High Protein
   "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=600&h=400&fit=crop", // Grilled salmon
-  "https://images.pexels.com/photos/5938/food-healthy-vegetables-potatoes.jpg?auto=compress&w=600&h=400&fit=crop", // Protein meal
+  "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&w=600&h=400&fit=crop", // Protein meal
   // Low Calorie
   "https://images.pexels.com/photos/593839/pexels-photo-593839.jpeg?auto=compress&w=600&h=400&fit=crop", // Zucchini noodles
   // Cultural
-  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=compress&w=600&h=400&fit=crop", // Sushi
+  "https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg?auto=compress&w=600&h=400&fit=crop", // Sushi
   // Balanced
   "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&w=600&h=400&fit=crop", // Balanced bowl
-  // User Cloudinary
-  "https://pplx-res.cloudinary.com/image/private/user_uploads/53136423/c9f8a249-462c-4aaf-ad98-966450c628d0/image.jpg" // Custom
+  // Healthy meal
+  "https://images.pexels.com/photos/1640771/pexels-photo-1640771.jpeg?auto=compress&w=600&h=400&fit=crop" // Healthy meal
 ];
 
 const leftSymbols = [
