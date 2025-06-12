@@ -10,15 +10,15 @@ body {
   align-items: flex-start;
 }
 
-/* App Container */
+/* App Container - Made Much Wider */
 .app-container {
   background: rgba(255,255,255,0.95);
   border-radius: 2rem;
   box-shadow: 0 8px 32px rgba(44,62,80,0.15);
-  max-width: 900px;
-  width: 100%;
+  max-width: 1400px; /* Increased from 900px */
+  width: 95%; /* Increased from 100% to use more screen width */
   margin: 20px 10px;
-  padding: 2rem 1.5rem;
+  padding: 2rem 2.5rem; /* Increased horizontal padding */
   position: relative;
   overflow: hidden;
 }
@@ -274,11 +274,11 @@ button:active {
   font-weight: 500;
 }
 
-/* Layout: Main Columns */
+/* Layout: Main Columns - Made Wider */
 .main-layout {
   display: grid;
-  grid-template-columns: 160px 1fr 160px;
-  gap: 2rem;
+  grid-template-columns: 200px 1fr 200px; /* Increased from 160px to 200px */
+  gap: 3rem; /* Increased from 2rem to 3rem */
   align-items: flex-start;
 }
 
@@ -286,54 +286,76 @@ button:active {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  min-width: 0; /* Prevents overflow issues */
 }
 
 .progress-tracker, .meal-generator {
   margin-bottom: 2.5rem;
 }
 
-/* Side Columns */
+/* Side Columns - Made Wider */
 .side-column {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 150px;
+  width: 190px; /* Increased from 150px */
 }
 
 .side-symbols {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Increased spacing */
 }
 
 .side-symbols i {
-  font-size: 24px;
+  font-size: 28px; /* Increased from 24px */
   color: #f7b42c;
-  margin-bottom: 5px;
+  margin-bottom: 8px; /* Increased spacing */
 }
 
 .side-images img {
-  width: 100px;
-  height: 100px;
+  width: 120px; /* Increased from 100px */
+  height: 120px; /* Increased from 100px */
   object-fit: cover;
-  margin-bottom: 5px;
+  margin-bottom: 8px; /* Increased spacing */
   border-radius: 0.8em;
   box-shadow: 0 1px 8px rgba(252, 87, 94, 0.12);
 }
 
-/* Responsive Design */
+/* Responsive Design - Updated breakpoints for wider layout */
+@media (max-width: 1200px) {
+  .app-container {
+    max-width: 1100px;
+    width: 92%;
+  }
+  .main-layout {
+    grid-template-columns: 160px 1fr 160px;
+    gap: 2rem;
+  }
+  .side-column {
+    width: 150px;
+  }
+  .side-images img {
+    width: 100px;
+    height: 100px;
+  }
+  .side-symbols i {
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 1020px) {
   .main-layout {
     grid-template-columns: 120px 1fr 120px;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   .side-column {
     width: 110px;
   }
   .side-images img {
-    width: 75px;
-    height: 75px;
+    width: 85px;
+    height: 85px;
   }
 }
 
@@ -352,6 +374,7 @@ button:active {
     margin: 10px;
     padding: 1.2rem 0.8rem;
     border-radius: 1.5rem;
+    width: 95%;
   }
   h1 {
     font-size: 1.8rem;
@@ -379,6 +402,7 @@ button:active {
   .app-container {
     margin: 5px;
     padding: 1rem 0.6rem;
+    width: 98%;
   }
   h1 {
     font-size: 1.5rem;
